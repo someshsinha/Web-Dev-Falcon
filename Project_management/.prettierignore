@@ -1,0 +1,14 @@
+# Ignore the engine and dependencies
+node_modules
+package-lock.json
+
+# Ignore your log files (like the one we just made)
+*.txt
+logdata.txt
+
+# Ignore environment variables
+.env
+
+# Ignore build files
+dist
+build

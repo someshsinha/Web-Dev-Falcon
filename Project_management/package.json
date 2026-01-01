@@ -1,0 +1,23 @@
+{
+  "name": "base_camp",
+  "version": "1.0.0",
+  "description": "a clone of the legendary project base camp",
+  "type": "module",
+  "main": "y",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
+  },
+  "author": "Somesh Sinha",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.11",
+    "prettier": "3.7.4"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "mongoose": "^9.1.1"
+  }
+}

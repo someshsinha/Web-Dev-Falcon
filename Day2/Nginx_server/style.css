@@ -1,0 +1,109 @@
+:root {
+    --primary: #009639; /* Nginx Green */
+    --dark: #121212;
+    --light: #f4f4f4;
+    --accent: #1db954;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--dark);
+    color: var(--light);
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Navigation */
+nav {
+    background: #1a1a1a;
+    padding: 1rem 0;
+    border-bottom: 2px solid var(--primary);
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0 15px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover, .active {
+    color: var(--primary);
+}
+
+/* Hero Section */
+.hero {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&q=80&w=2000');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* Status Card */
+.status {
+    padding: 3rem 0;
+}
+
+.card {
+    background: #1e1e1e;
+    padding: 2rem;
+    border-radius: 10px;
+    border-left: 5px solid var(--primary);
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+}
+
+.online {
+    color: var(--accent);
+    font-weight: bold;
+}
