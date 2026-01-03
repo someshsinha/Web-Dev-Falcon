@@ -17,7 +17,12 @@ app.use(
 );
 
 //basic routing
+//import the routes
+import router from "./routes/healthcheckrouter.js";
+app.use("/api/v1/healthcheck", router);
+
 app.get("/", (req, res) => {
   res.send("Alhabibi welcome to basecampy");
 });
+
 export default app;
