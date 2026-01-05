@@ -65,15 +65,14 @@ const userSchema = new Schema(
 //two more things to do : 1)write prehooks such as encrypting password before saving and
 // then write a method to save a certain thing or else to match if the entered password is equal to the one saved in the database
 userSchema.pre("save", async function (next) {
-  if (!this.isModified(password)) return next();
+  if (!this.isModified("password")) return;
   this.password = await bcrypt.hash(this.password, 10);
-  next();
 });
-userSchema.method.isPasswordCorrect = async function (password) {
+userSchema.methods.isPasswordCorrect = async function (password) {
   return await bcrypt.compare(password, this.password);
 };
 //now it is the time to genere the access and refresh tokens
-userSchema.method.generateAccessToken = function () {
+userSchema.methods.generateAccessToken = function () {
   return jwt.sign(
     {
       _id: this._id,
@@ -84,7 +83,7 @@ userSchema.method.generateAccessToken = function () {
     { expiresIn: process.env.ACCESS_TOKEN_EXPIRY },
   );
 };
-userSchema.method.generateRefreshToken = function () {
+userSchema.methods.generateRefreshToken = function () {
   return jwt.sign(
     {
       _id: this._id,
@@ -93,7 +92,7 @@ userSchema.method.generateRefreshToken = function () {
     { expiresIn: process.env.ACCESS_TOKEN_EXPIRY },
   );
 };
-userSchema.method.generateTemporaryToken = function () {
+userSchema.methods.generateTemporaryToken = function () {
   const unHashedToken = crypto.randomBytes(20).toString("hex");
   const HashedToken = crypto
     .createHash("sha256")

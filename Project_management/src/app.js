@@ -21,8 +21,11 @@ app.use(
 import router from "./routes/healthcheckrouter.js";
 app.use("/api/v1/healthcheck", router);
 
-app.get("/", (req, res) => {
-  res.send("Alhabibi welcome to basecampy");
-});
+//app.get("/", (req, res) => {
+//res.send("Alhabibi welcome to basecampy");
+//});
+
+import authRouter from "./routes/auth.user.js";
+app.use("/api/v1/auth", authRouter);
 
 export default app;
